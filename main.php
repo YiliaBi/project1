@@ -1,18 +1,19 @@
 <?php
 
 class main {
-    public function __construct()
+    public function _construct()
         {
 	//header('Location:index.php?page=upload');
-        $pageRequest = 'homepage';
+        //echo "welcome!";
+	$pageRequest = 'homepage';
 	if(isset($_REQUEST['page'])) {
            $pageRequest=$_REQUEST['page'];
 	 }
-       // $page=new $pageRequest;
-       // if($_SERVER['REQUEST_METHOD'] =='GET'){
-	// $page->get();
-        // } else {
-        // $page->post();}
+        $page=new $pageRequest;
+        if($_SERVER['REQUEST_METHOD'] =='GET'){
+	 $page->get();
+         } else {
+        $page->post();}
          }
 }
 

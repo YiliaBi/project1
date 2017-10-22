@@ -16,9 +16,11 @@ class upload extends page
 
     public function post()
     {
-   $target_file = "Project1/" . $_FILES["fileToUpload"]["name"];
-   move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-   header('Location:index.php?page=display&filename='.$_FILES["file"]["name"]);
+   $target_dir = "upload/";
+   $target_file = $traget_dir.$_FILES["file"]["name"];
+   move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+   //header('Location:index.php?page=display&filename='.$_FILES["file"]["name"]);
+   header('Location:index.php?page=display');
    }
 
    }

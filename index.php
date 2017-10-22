@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 class Manage {
     public static function autoload($class) {
            
-	   include '../project1/'.$class . '.php';
+	   include $class. '.php';
 		        }
 }
 

@@ -7,7 +7,7 @@ class  display extends page
 	{
 	echo "<html><body><table>\n\n"
 	
-	$fh = fopen("./project1/".$_GET['filename']', 'r');
+	$fh = fopen("../project1/upload/news_decline.csv", "r");
 	while (($line = fgetcsv($fh))!==flase){
 	$row=$line[0];
 	$cells=explode(" ",$row);

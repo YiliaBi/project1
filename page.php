@@ -2,22 +2,23 @@
 
 abstract class page{
 	protected $html;
-	public function __construct()
+	public function _construct()
 		{
 		$this->html .= '<html>';
+		$this->html .='<link rel="stylesheet" href="styles.css">';
 		$this->html .= '<body>';
 		}
-	public function __destruct()
+	public function _destruct()
 		{
 		$this->html .= '</html>';
-		echo $this->html;
+		stringfunctions::printThis($this->html);
 		}
 
         public function get() {
 	        echo 'default get message';
 		}
         public function post() {
-		print_r($post);
+		print_r($_post);
 		}
 }
 
