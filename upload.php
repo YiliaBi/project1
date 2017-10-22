@@ -19,8 +19,8 @@ class upload extends page
    $target_dir = "upload/";
    $target_file = $traget_dir.$_FILES["file"]["name"];
    move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-   //header('Location:index.php?page=display&filename='.$_FILES["file"]["name"]);
-   header('Location:index.php?page=display');
+   header('Location:index.php?page=display&filename='.$_FILES["file"]["name"]);
+   //header('Location:index.php?page=display');
    }
 
    }
