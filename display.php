@@ -23,7 +23,7 @@ echo "\n</table></body></html>";
 }
 }
 
-?>
+
 
         print '</table>';
 
