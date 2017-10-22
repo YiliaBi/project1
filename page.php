@@ -10,15 +10,9 @@ abstract class page{
 		}
 	public function _destruct()
 		{
+		$this->html .= '</body>';
 		$this->html .= '</html>';
-		stringfunctions::printThis($this->html);
-		}
-
-        public function get() {
-	        echo 'default get message';
-		}
-        public function post() {
-		print_r($_post);
+		stringfunction::printThis($this->html);
 		}
 }
 
