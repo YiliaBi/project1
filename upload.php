@@ -30,7 +30,7 @@ class upload extends page
          	echo "Sorry, file already exists.";
 	        }else {
 	             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file); 
-		     header('Location:index.php?page=display&filename='. $_FILES["file"]["name"]);	
+		     header('Location:index.php?page=display&filename='. $_FILES["fileToUpload"]["name"]);	
                        } 
    }
 
