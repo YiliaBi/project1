@@ -3,13 +3,13 @@
 abstract class page  {
 	protected $html;
 
-	public function _construct()
+	public function __construct()
 		{
 		$this->html .= '<html>';
 		$this->html .= '<link rel="stylesheet" href="styles.css">';
 		$this->html .= '<body>';
 		}
-	public function _destruct()
+	public function __destruct()
 		{
 		$this->html .= '</body>';
 		$this->html .= '</html>';
