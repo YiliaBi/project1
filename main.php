@@ -2,7 +2,7 @@
 echo "1233";
 class main {
    
-    public function _construct()
+    public function __construct()
         {
         echo "5678";
         $pageRequest = 'homepage';
