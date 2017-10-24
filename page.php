@@ -1,11 +1,12 @@
 <?php
 
-abstract class page{
+abstract class page  {
 	protected $html;
+
 	public function _construct()
 		{
 		$this->html .= '<html>';
-		$this->html .='<link rel="stylesheet" href="styles.css">';
+		$this->html .= '<link rel="stylesheet" href="styles.css">';
 		$this->html .= '<body>';
 		}
 	public function _destruct()

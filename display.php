@@ -1,30 +1,46 @@
 <?php
 
-class  display extends page
+class display extends page
 {
 
 	public function get()
 	{
-	echo "<html><body><table>\n\n"
-	
-	$fh = fopen("../project1/upload/news_decline.csv", "r");
-	while (($line = fgetcsv($fh))!==flase){
-	$row=$line[0];
-	$cells=explode(" ",$row);
-	echo"<tr>";
-	foreach($cell as $cell){
-		echo "<td>" . htmlspecialchars($cell). "</td>";
-
+	$row = 1;
+	if (($handle = fopen("./upload/".$_GET['filename'], "r")) !== FALSE) {
+	    
+	    echo '<table border="1">';
+		    
+	while (($data = fgetcsv($handle)) !== FALSE) {
+		$num = count($data);
+        	if ($row == 1) {
+	            echo '<thead><tr>';
+		}else{
+		    echo '<tr>';
+		}
+        	for ($c=0; $c < $num; $c++) {
+	             if(empty($data[$c])) {
+			$value = "&nbsp;";
+		     }else{
+		     $value = $data[$c];
+		     }
+		     if ($row == 1) {
+                	echo '<th>'.$value.'</th>';
+		     }else{
+			echo '<td>'.$value.'</td>';
+		     }
+		}
+		if ($row == 1) {
+            		echo '</tr></thead><tbody>';
+	        }else{
+		        echo '</tr>';
+		}
+		$row++;
 	}
-	echo "</tr>\n";
+						        
+	echo '</tbody></table>';
+	fclose($handle);
+	}
+	}	
 }
-fclose($fh);
-echo "\n</table></body></html>";
-}
-}
-
-
-
-        print '</table>';
 
 ?>
